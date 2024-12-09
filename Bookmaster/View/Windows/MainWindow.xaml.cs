@@ -1,4 +1,5 @@
 ﻿using Bookmaster.View.Pages;
+using Bookmaster.View.Windows;
 using System.Windows;
 
 namespace Bookmaster
@@ -29,7 +30,8 @@ namespace Bookmaster
 
         private void LoginMi_Click(object sender, RoutedEventArgs e)
         {
-
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.ShowDialog();
         }
 
         private void LogoutMi_Click(object sender, RoutedEventArgs e)
@@ -44,7 +46,7 @@ namespace Bookmaster
 
         private void ManageCustomersMi_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new ManageCustomersPage());
         }
 
         private void CirculationMi_Click(object sender, RoutedEventArgs e)
