@@ -51,7 +51,7 @@ namespace Bookmaster
 
         private void CirculationMi_Click(object sender, RoutedEventArgs e)
         {
-
+            MainFrame.Navigate(new CirculationPage());
         }
 
         private void ReviewsMi_Click(object sender, RoutedEventArgs e)
