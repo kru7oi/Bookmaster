@@ -13,7 +13,7 @@
                 <ResourceDictionary Source="\Styles\TabControlStyle.xaml"/>
                 <ResourceDictionary Source="\Styles\TextBlockStyle.xaml"/>
                 <ResourceDictionary Source="\Styles\TextBoxStyle.xaml"/>
-                <ResourceDictionary Source="\Styles\GridSplitterStyle.xaml"/>
+                <ResourceDictionary Source="\Styles\GridSplitterStyle.xaml" />
             </ResourceDictionary.MergedDictionaries>
         </ResourceDictionary>
     </Application.Resources>
