@@ -22,7 +22,7 @@
             <MenuItem Header="Библиотека">
                 <MenuItem Name="BrowseCatalogMi" Header="Просмотр каталога" Click="BrowseCatalogMi_Click"/>
                 <MenuItem Name="ManageCustomersMi" Header="Управление читателями" Click="ManageCustomersMi_Click"/>
-                <MenuItem Name="CirculationMi" Header="Возврат/выдача книг" Click="CirculationMi_Click"/>
+                <MenuItem Name="CirculationMi" Header="Управление абонементом" Click="CirculationMi_Click"/>
                 <MenuItem Name="ReviewsMi" Header="Отчёты" Click="ReviewsMi_Click"/>
             </MenuItem>
         </Menu>
