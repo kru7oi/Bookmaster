@@ -54,7 +54,7 @@
                 <Grid.RowDefinitions>
                     <RowDefinition Height="1*" />
                     <RowDefinition Height="5" />
-                    <RowDefinition Height="50" />
+                    <RowDefinition Height="40" />
                     <RowDefinition Height="5" />
                 </Grid.RowDefinitions>
 
@@ -67,7 +67,7 @@
                     </ListView.View>
                 </ListView>
 
-                <Grid Grid.Row="2" VerticalAlignment="Center">
+                <Grid Grid.Row="2">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="auto" />
                         <ColumnDefinition Width="10" />
