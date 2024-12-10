@@ -26,11 +26,6 @@
   </ItemGroup>
 
   <ItemGroup>
-    <Folder Include="AppData\" />
-    <Folder Include="UserControls\" />
-  </ItemGroup>
-
-  <ItemGroup>
     <Resource Include="Resources\logo.png" />
   </ItemGroup>
 
