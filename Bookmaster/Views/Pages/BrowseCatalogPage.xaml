@@ -34,11 +34,11 @@
             <TextBlock Grid.Row="4" Text="Автор" />
             <TextBlock Grid.Row="6" Text="Жанр" />
 
-            <TextBox Grid.Row="2" Grid.Column="2" />
-            <TextBox Grid.Row="4" Grid.Column="2" />
-            <TextBox Grid.Row="6" Grid.Column="2" />
+            <TextBox Name="SearchByBookTitleTb" Grid.Row="2" Grid.Column="2" />
+            <TextBox Name="SearchByAuthorNameTb" Grid.Row="4" Grid.Column="2" />
+            <TextBox Name="SearchByBookSubjectsTb" Grid.Row="6" Grid.Column="2" />
 
-            <Button Grid.Row="8" Grid.Column="2" Content="Поиск" />
+            <Button Name="SearchBtn" Grid.Row="8" Grid.Column="2" Content="Поиск" Click="SearchBtn_Click"/>
         </Grid>
         <!--#endregion -->
 
@@ -58,11 +58,11 @@
                     <RowDefinition Height="5" />
                 </Grid.RowDefinitions>
 
-                <ListView>
+                <ListView Name="BookAuthorsLv" SelectionChanged="BookAuthorsLv_SelectionChanged">
                     <ListView.View>
                         <GridView>
-                            <GridViewColumn Header="Название" DisplayMemberBinding="{Binding}" />
-                            <GridViewColumn Header="Автор" DisplayMemberBinding="{Binding}" />
+                            <GridViewColumn Header="Название" DisplayMemberBinding="{Binding Book.Title}" />
+                            <GridViewColumn Header="Автор" DisplayMemberBinding="{Binding Author.Name}" />
                         </GridView>
                     </ListView.View>
                 </ListView>
@@ -99,7 +99,7 @@
             <!--#endregion -->
 
             <!--#region Подробная информация о книге -->
-            <Grid Grid.Row="2">
+            <Grid Name="BookDetailsGrid" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="10" />
