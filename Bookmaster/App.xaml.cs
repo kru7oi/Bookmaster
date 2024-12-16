@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Bookmaster.Model;
+using System.Windows;
 
 namespace Bookmaster
 {
@@ -7,6 +8,6 @@ namespace Bookmaster
     /// </summary>
     public partial class App : Application
     {
+        public static BookmasterDemoContext context = new BookmasterDemoContext();
     }
-
 }
