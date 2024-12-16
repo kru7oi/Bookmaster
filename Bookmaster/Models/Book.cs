@@ -1,7 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-
-namespace Bookmaster.Model;
+﻿namespace Bookmaster.Model;
 
 public partial class Book
 {
@@ -14,6 +11,14 @@ public partial class Book
     public DateOnly? FirstPublishDate { get; set; }
 
     public string? Description { get; set; }
+
+    public string Authors
+    {
+        get
+        {
+            return string.Join(", ", BookAuthors.Select(bookAuthor => bookAuthor.Author.Name));
+        }
+    }
 
     public virtual ICollection<BookAuthor> BookAuthors { get; set; } = new List<BookAuthor>();
 
