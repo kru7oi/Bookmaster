@@ -14,12 +14,20 @@ namespace Bookmaster
             InitializeComponent();
 
             MainFrame.Navigate(new BrowseCatalogPage());
+
+            LogoutMi.Visibility = Visibility.Collapsed;
+            LibraryMi.Visibility = Visibility.Collapsed;
         }
 
         private void LoginMi_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow loginWindow = new LoginWindow();
-            loginWindow.ShowDialog();
+            if (loginWindow.ShowDialog() == true)
+            {
+                LogoutMi.Visibility = Visibility.Visible;
+                LibraryMi.Visibility = Visibility.Visible;
+                LoginMi.Visibility = Visibility.Collapsed;
+            }
         }
 
         private void LogoutMi_Click(object sender, RoutedEventArgs e)
