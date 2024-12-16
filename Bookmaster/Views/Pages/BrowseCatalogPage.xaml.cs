@@ -9,12 +9,12 @@ namespace Bookmaster.View.Pages
     /// </summary>
     public partial class BrowseCatalogPage : Page
     {
-        private List<BookAuthor> _bookAuthors = App.context.BookAuthors.ToList();
+        private List<Book> _books = App.context.Books.ToList();
         public BrowseCatalogPage()
         {
             InitializeComponent();
 
-            BookAuthorsLv.ItemsSource = _bookAuthors;
+            BookAuthorsLv.ItemsSource = _books;
 
             BookDetailsGrid.Visibility = Visibility.Hidden;
         }
@@ -34,13 +34,13 @@ namespace Bookmaster.View.Pages
                 string.IsNullOrEmpty(authorName) &&
                 string.IsNullOrEmpty(bookSubjects))
             {
-                BookAuthorsLv.ItemsSource = _bookAuthors;
+                BookAuthorsLv.ItemsSource = _books;
             }
             else
             {
-                BookAuthorsLv.ItemsSource = _bookAuthors.Where(bookAuthor =>
-                bookAuthor.Book.Title.Contains(bookTitle, StringComparison.OrdinalIgnoreCase) &&
-                bookAuthor.Author.Name.Contains(authorName, StringComparison.OrdinalIgnoreCase));
+                BookAuthorsLv.ItemsSource = _books.Where(book =>
+                book.Title.Contains(bookTitle, StringComparison.OrdinalIgnoreCase) &&
+                book.Authors.Contains(authorName, StringComparison.OrdinalIgnoreCase));
             }
         }
     }
