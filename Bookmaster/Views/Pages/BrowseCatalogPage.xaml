@@ -103,7 +103,7 @@
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="10" />
-                    <ColumnDefinition Width="auto" />
+                    <ColumnDefinition Width="300" />
                 </Grid.ColumnDefinitions>
 
                 <!--#region Информация о книге -->
@@ -145,7 +145,7 @@
                 <!--#endregion -->
 
                 <!--#region Изображения книги -->
-                <Grid Grid.Column="2" Width="300" HorizontalAlignment="Right">
+                <Grid Grid.Column="2">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="1*" />
                         <RowDefinition Height="10" />
@@ -157,10 +157,25 @@
                         <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
 
-                    <Image Grid.ColumnSpan="3" />
+                    <ListBox Name="CoversLb" Grid.ColumnSpan="3" ScrollViewer.HorizontalScrollBarVisibility="Disabled">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <Grid>
+                                    <Image Source="{Binding Cover.Path}" Stretch="Uniform" />
+                                </Grid>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                        <ListBox.ItemContainerStyle>
+                            <Style TargetType="ListBoxItem">
+                                <Setter Property="Width" Value="{Binding ElementName=CoversLb, Path=ActualWidth}" />
+                                <Setter Property="Height" Value="{Binding ElementName=CoversLb, Path=ActualHeight}" />
+                                <Setter Property="HorizontalContentAlignment" Value="Center" />
+                            </Style>
+                        </ListBox.ItemContainerStyle>
+                    </ListBox>
 
-                    <Button Grid.Row="2" Content="&lt;" />
-                    <Button Grid.Row="2" Grid.Column="2" Content="&gt;" />
+                    <Button Name="PreviousCoverBtn" Grid.Row="2" Content="&lt;" Click="PreviousCoverBtn_Click"/>
+                    <Button Name="NextCoverBtn" Grid.Row="2" Grid.Column="2" Content="&gt;" Click="NextCoverBtn_Click"/>
                 </Grid>
                 <!--#endregion -->
             </Grid>
