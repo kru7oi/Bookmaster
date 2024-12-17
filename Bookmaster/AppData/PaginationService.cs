@@ -56,7 +56,7 @@ namespace Bookmaster.AppData
         }
         public void UpdateNavigationButtons(Button nextBtn, Button previousBtn)
         {
-            nextBtn.IsEnabled = _currentPageIndex < (_items.Count / _pageSize);
+            nextBtn.IsEnabled = _currentPageIndex < TotalPages - 1;
             previousBtn.IsEnabled = _currentPageIndex > 0;
         }
     }
