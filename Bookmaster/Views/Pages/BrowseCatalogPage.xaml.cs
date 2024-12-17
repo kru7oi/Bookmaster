@@ -12,7 +12,10 @@ namespace Bookmaster.View.Pages
     public partial class BrowseCatalogPage : Page
     {
         private List<Book> _books = App.context.Books.ToList();
+        private List<BookCover> _covers = App.context.BookCovers.ToList();
+
         private PaginationService<Book>? _booksPagination;
+        private PaginationService<BookCover>? _coverPagination;
         public BrowseCatalogPage()
         {
             InitializeComponent();
@@ -25,11 +28,14 @@ namespace Bookmaster.View.Pages
             if (selectedBook != null)
             {
                 BookDetailsGrid.Visibility = Visibility.Visible;
-
                 BookDetailsGrid.DataContext = selectedBook;
+                _coverPagination = new PaginationService<BookCover>(_covers.Where(cover => cover.BookId == selectedBook.Id).ToList(), 1);
+                CoversLb.ItemsSource = _coverPagination.CurrentPageOfItems;
+                _coverPagination.UpdateNavigationButtons(NextCoverBtn, PreviousCoverBtn);
             }
         }
 
+        #region Поиск по книгам
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
         {
             SearchResultsGrid.Visibility = Visibility.Visible;
@@ -58,6 +64,9 @@ namespace Bookmaster.View.Pages
             TotalPagesTbl.DataContext = TotalBooksTbl.DataContext = _booksPagination;
             _booksPagination.UpdateNavigationButtons(NextBookBtn, PreviousBookBtn);
         }
+        #endregion
+
+        #region Навигация по книгам
         private void PreviousBookBtn_Click(object sender, RoutedEventArgs e)
         {
             BookAuthorsLv.ItemsSource = _booksPagination.PreviousPage();
@@ -79,11 +88,24 @@ namespace Bookmaster.View.Pages
 
             _booksPagination.UpdateNavigationButtons(NextBookBtn, PreviousBookBtn);
         }
+        #endregion
 
         private void AuthorsDetailsHl_Click(object sender, RoutedEventArgs e)
         {
             BookAuthorsDetailsWindow bookAuthorsDetailsWindow = new BookAuthorsDetailsWindow();
             bookAuthorsDetailsWindow.ShowDialog();
+        }
+
+        private void PreviousCoverBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CoversLb.ItemsSource = _coverPagination.PreviousPage();
+            _coverPagination.UpdateNavigationButtons(NextCoverBtn, PreviousCoverBtn);
+        }
+
+        private void NextCoverBtn_Click(object sender, RoutedEventArgs e)
+        {
+            CoversLb.ItemsSource = _coverPagination.NextPage();
+            _coverPagination.UpdateNavigationButtons(NextCoverBtn, PreviousCoverBtn);
         }
     }
 }
