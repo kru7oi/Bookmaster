@@ -37,7 +37,7 @@
             <TextBox Name="SearchByAuthorNameTb" Grid.Row="4" Grid.Column="2" />
             <TextBox Name="SearchByBookSubjectsTb" Grid.Row="6" Grid.Column="2" />
 
-            <Button Name="SearchBtn" Grid.Row="8" Grid.Column="2" Content="Поиск" Click="SearchBtn_Click"/>
+            <Button Name="SearchBtn" Grid.Row="8" Grid.Column="2" Content="Поиск" Click="SearchBtn_Click" />
         </Grid>
         <!--#endregion -->
 
@@ -47,7 +47,7 @@
                 <RowDefinition Height="15" />
                 <RowDefinition Height="1*" />
             </Grid.RowDefinitions>
-            
+
             <!--#region Результаты поиска -->
             <Grid>
                 <Grid.RowDefinitions>
@@ -85,7 +85,7 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Страница" />
-                    <Button Grid.Column="2" Content="&lt;"/>
+                    <Button Grid.Column="2" Content="&lt;" />
                     <TextBox Grid.Column="4" Text="1" HorizontalContentAlignment="Center" />
                     <Button Grid.Column="6" Content="&gt;" />
                     <TextBlock Grid.Column="8" Text="из 4" />
@@ -95,7 +95,7 @@
             <!--#endregion -->
 
             <!--#region Разделитель -->
-            <GridSplitter Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch"/>
+            <GridSplitter Grid.Row="1" Grid.Column="2" HorizontalAlignment="Stretch" />
             <!--#endregion -->
 
             <!--#region Подробная информация о книге -->
@@ -105,7 +105,7 @@
                     <ColumnDefinition Width="10" />
                     <ColumnDefinition Width="1*" />
                 </Grid.ColumnDefinitions>
-                
+
                 <!--#region Информация о книге -->
                 <Grid>
                     <Grid.RowDefinitions>
@@ -125,20 +125,20 @@
                         <RowDefinition Height="10" />
                     </Grid.RowDefinitions>
 
-                    <TextBlock  FontSize="30" FontWeight="SemiBold"/>
+                    <TextBlock FontSize="30" FontWeight="SemiBold" />
                     <TextBlock Grid.Row="2" />
                     <TextBlock Grid.Row="4">
                         <Hyperlink>
-                            <TextBlock/>
+                            <TextBlock />
                         </Hyperlink>
                     </TextBlock>
                     <TextBlock Grid.Row="6" />
-                    <TextBlock Grid.Row="8" Text="Описание" FontWeight="SemiBold"/>
+                    <TextBlock Grid.Row="8" Text="Описание" FontWeight="SemiBold" />
                     <TextBlock Grid.Row="10" />
                     <TextBlock Grid.Row="10" />
                 </Grid>
                 <!--#endregion -->
-                
+
                 <!--#region Изображения книги -->
                 <Grid Grid.Column="2" Width="300" HorizontalAlignment="Right">
                     <Grid.RowDefinitions>
@@ -152,10 +152,10 @@
                         <ColumnDefinition Width="1*" />
                     </Grid.ColumnDefinitions>
 
-                    <Image Grid.ColumnSpan="3"/>
+                    <Image Grid.ColumnSpan="3" />
 
-                    <Button Grid.Row="2" Content="&lt;"/>
-                    <Button Grid.Row="2" Grid.Column="2" Content="&gt;"/>
+                    <Button Grid.Row="2" Content="&lt;" />
+                    <Button Grid.Row="2" Grid.Column="2" Content="&gt;" />
                 </Grid>
                 <!--#endregion -->
             </Grid>
