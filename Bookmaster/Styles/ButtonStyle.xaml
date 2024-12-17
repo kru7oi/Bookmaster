@@ -25,6 +25,9 @@
                         <Trigger Property="IsPressed" Value="True">
                             <Setter Property="Background" Value="#344d06" />
                         </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Background" Value="Gray" />
+                        </Trigger>
                     </ControlTemplate.Triggers>
                 </ControlTemplate>
             </Setter.Value>
