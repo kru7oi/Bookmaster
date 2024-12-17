@@ -41,7 +41,7 @@
         </Grid>
         <!--#endregion -->
 
-        <Grid Name="SearchResultsGrid" Grid.Column="2" Visibility="Hidden">
+        <Grid Grid.Column="2">
             <Grid.RowDefinitions>
                 <RowDefinition Height="1*" />
                 <RowDefinition Height="15" />
@@ -85,11 +85,11 @@
                     </Grid.ColumnDefinitions>
 
                     <TextBlock Text="Страница" />
-                    <Button Name="PreviousBookBtn" Grid.Column="2" Content="&lt;" Click="PreviousBookBtn_Click"/>
-                    <TextBox Name="CurrentPageTb" Grid.Column="4" HorizontalContentAlignment="Center" TextChanged="CurrentPageTb_TextChanged"/>
-                    <Button Name="NextBookBtn" Grid.Column="6" Content="&gt;" Click="NextBookBtn_Click"/>
-                    <TextBlock Name="TotalPagesTbl" Grid.Column="8" Text="{Binding TotalPages, StringFormat=из {0}}"/>
-                    <TextBlock Name="TotalBooksTbl" Grid.Column="12" Text="{Binding ItemsCount, StringFormat=Всего книг найдено: {0}}" />
+                    <Button Grid.Column="2" Content="&lt;"/>
+                    <TextBox Grid.Column="4" Text="1" HorizontalContentAlignment="Center" />
+                    <Button Grid.Column="6" Content="&gt;" />
+                    <TextBlock Grid.Column="8" Text="из 4" />
+                    <TextBlock Grid.Column="12" Text="153 книги найдено" />
                 </Grid>
             </Grid>
             <!--#endregion -->
@@ -99,7 +99,7 @@
             <!--#endregion -->
 
             <!--#region Подробная информация о книге -->
-            <Grid Name="BookDetailsGrid" Grid.Row="2" Visibility="Hidden">
+            <Grid Name="BookDetailsGrid" Grid.Row="2">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition Width="1*" />
                     <ColumnDefinition Width="10" />
