@@ -1,5 +1,6 @@
 ﻿using Bookmaster.AppData;
 using Bookmaster.Model;
+using Bookmaster.View.Windows;
 using System.Windows;
 using System.Windows.Controls;
 
@@ -19,7 +20,14 @@ namespace Bookmaster.View.Pages
 
         private void BookAuthorsLv_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
+            Book? selectedBook = BookAuthorsLv.SelectedItem as Book;
 
+            if (selectedBook != null)
+            {
+                BookDetailsGrid.Visibility = Visibility.Visible;
+
+                BookDetailsGrid.DataContext = selectedBook;
+            }
         }
 
         private void SearchBtn_Click(object sender, RoutedEventArgs e)
@@ -70,6 +78,12 @@ namespace Bookmaster.View.Pages
             }
 
             _booksPagination.UpdateNavigationButtons(NextBookBtn, PreviousBookBtn);
+        }
+
+        private void AuthorsDetailsHl_Click(object sender, RoutedEventArgs e)
+        {
+            BookAuthorsDetailsWindow bookAuthorsDetailsWindow = new BookAuthorsDetailsWindow();
+            bookAuthorsDetailsWindow.ShowDialog();
         }
     }
 }
