@@ -1,4 +1,5 @@
-﻿using Bookmaster.View.Pages;
+﻿using Bookmaster.AppData;
+using Bookmaster.View.Pages;
 using Bookmaster.View.Windows;
 using System.Windows;
 
@@ -32,7 +33,7 @@ namespace Bookmaster
 
         private void LogoutMi_Click(object sender, RoutedEventArgs e)
         {
-
+            AuthenticationService.Logout();
         }
 
         private void CloseAppMi_Click(object sender, RoutedEventArgs e)
