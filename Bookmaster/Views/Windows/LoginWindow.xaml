@@ -21,9 +21,9 @@
 
         <TextBlock Text="Логин"/>
         <TextBlock Grid.Row="2" Text="Пароль"/>
-        <TextBox Grid.Column="2"/>
-        <PasswordBox Grid.Row="2" Grid.Column="2"/>
-        <Button Grid.Row="4" Grid.Column="2" Content="Войти" HorizontalAlignment="Left"/>
-        <Button Grid.Row="4" Grid.Column="2" Content="Отмена" HorizontalAlignment="Right"/>
+        <TextBox Name="LoginTb" Grid.Column="2"/>
+        <PasswordBox Name="PasswordPb" Grid.Row="2" Grid.Column="2" PasswordChar="*"/>
+        <Button Name="AuthenticateBtn" Grid.Row="4" Grid.Column="2" Content="Войти" HorizontalAlignment="Left" Click="AuthenticateBtn_Click"/>
+        <Button Name="CancelBtn" Grid.Row="4" Grid.Column="2" Content="Отмена" HorizontalAlignment="Right" Click="CancelBtn_Click"/>
     </Grid>
 </Window>
