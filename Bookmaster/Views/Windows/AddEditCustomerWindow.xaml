@@ -26,9 +26,9 @@
         <TextBlock Grid.Row="4" Text="Адрес" />
         <TextBlock Grid.Row="6" Text="Индекс/город" />
 
-        <TextBox Name="CustomerIdTb" Grid.Column="2" IsReadOnly="True" BorderBrush="Gray" Background="LightGray"/>
-        <TextBox Name="CustomerNameTb" Grid.Row="2" Grid.Column="2" />
-        <TextBox Name="CustomerAddressTb" Grid.Row="4" Grid.Column="2" />
+        <TextBox Name="CustomerIdTb" Grid.Column="2" Text="{Binding Id}" IsReadOnly="True" BorderBrush="Gray" Background="LightGray"/>
+        <TextBox Name="CustomerNameTb" Grid.Row="2" Grid.Column="2" Text="{Binding Name}"/>
+        <TextBox Name="CustomerAddressTb" Grid.Row="4" Grid.Column="2" Text="{Binding Address}"/>
         <Grid Grid.Row="6" Grid.Column="2">
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="100" />
@@ -36,15 +36,15 @@
                 <ColumnDefinition Width="1*" />
             </Grid.ColumnDefinitions>
 
-            <TextBox Name="CustomerZipTb"/>
+            <TextBox Name="CustomerZipTb" Text="{Binding Zip}"/>
             <ComboBox Name="CustomerCityCmb" Grid.Column="2" />
         </Grid>
 
         <TextBlock Grid.Row="2" Grid.Column="4" Text="Телефон" />
         <TextBlock Grid.Row="4" Grid.Column="4" Text="Эл. почта" />
 
-        <TextBox Name="CustomerPhoneTb" Grid.Row="2" Grid.Column="6" />
-        <TextBox Name="EmailTb" Grid.Row="4" Grid.Column="6" />
+        <TextBox Name="CustomerPhoneTb" Grid.Row="2" Grid.Column="6" Text="{Binding Phone}" TextChanged="CustomerPhoneTb_TextChanged"/>
+        <TextBox Name="CustomerEmailTb" Grid.Row="4" Grid.Column="6" Text="{Binding Email}"/>
 
         <Button Name="AddCustomerBtn" Grid.Row="8" Grid.Column="6" Content="Добавить" HorizontalAlignment="Left" Click="AddCustomerBtn_Click"/>
         <Button Name="EditCustomerBtn" Grid.Row="8" Grid.Column="6" Content="Сохранить" HorizontalAlignment="Left" Click="EditCustomerBtn_Click"/>
