@@ -11,6 +11,8 @@ namespace Bookmaster.View.Pages
     /// </summary>
     public partial class BrowseCatalogPage : Page
     {
+        private Book? _selectedBook;
+
         private List<Book> _books = App.context.Books.ToList();
         private List<BookCover> _covers = App.context.BookCovers.ToList();
 
@@ -92,8 +94,13 @@ namespace Bookmaster.View.Pages
 
         private void AuthorsDetailsHl_Click(object sender, RoutedEventArgs e)
         {
-            BookAuthorsDetailsWindow bookAuthorsDetailsWindow = new BookAuthorsDetailsWindow();
-            bookAuthorsDetailsWindow.ShowDialog();
+            _selectedBook = BookAuthorsLv.SelectedItem as Book;
+
+            if (_selectedBook != null)
+            {
+                BookAuthorsDetailsWindow bookAuthorsDetailsWindow = new BookAuthorsDetailsWindow(_selectedBook.BookAuthors);
+                bookAuthorsDetailsWindow.ShowDialog();
+            }
         }
 
         private void PreviousCoverBtn_Click(object sender, RoutedEventArgs e)
