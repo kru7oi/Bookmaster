@@ -34,6 +34,10 @@ namespace Bookmaster
         private void LogoutMi_Click(object sender, RoutedEventArgs e)
         {
             AuthenticationService.Logout();
+
+            LogoutMi.Visibility = Visibility.Collapsed;
+            LibraryMi.Visibility = Visibility.Collapsed;
+            LoginMi.Visibility = Visibility.Visible;
         }
 
         private void CloseAppMi_Click(object sender, RoutedEventArgs e)
