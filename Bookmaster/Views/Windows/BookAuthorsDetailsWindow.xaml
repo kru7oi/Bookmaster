@@ -21,18 +21,25 @@
             <RowDefinition Height="50" />
         </Grid.RowDefinitions>
 
-        <ComboBox Name="AuthorsCmb"/>
-        <TextBlock Grid.Row="2" Text="31 июля 1965 -"/>
+        <ComboBox Name="AuthorsCmb" SelectionChanged="AuthorsCmb_SelectionChanged"/>
+        <TextBlock Grid.Row="2">
+            <TextBlock.Text>
+                <MultiBinding StringFormat="{}{0:dd.MM.yyyy} - {1:dd.MM.yyyy}">
+                    <Binding Path="Author.BirthDate"/>
+                    <Binding Path="Author.DeathDate" />
+                </MultiBinding>
+            </TextBlock.Text>
+        </TextBlock>
         <TextBlock Grid.Row="4" Text="Биография" FontWeight="SemiBold"/>
         <ScrollViewer Grid.Row="6" BorderThickness="0">
-            <TextBlock Text="test info" VerticalAlignment="Top"/>
+            <TextBlock Text="{Binding Author.Bio}" VerticalAlignment="Top"/>
         </ScrollViewer>
         <TextBlock Grid.Row="8">
-            <Hyperlink>
+            <Hyperlink Name="WikipediaHl"  NavigateUri="{Binding Author.Wikipedia}" RequestNavigate="WikipediaHl_RequestNavigate">
                 Больше информации на Wikipedia
             </Hyperlink>
         </TextBlock>
 
-        <Button Grid.Row="10" HorizontalAlignment="Left" Content="Закрыть"/>
+        <Button Name="CloseBtn" Grid.Row="10" HorizontalAlignment="Left" Content="Закрыть" Click="CloseBtn_Click"/>
     </Grid>
 </Window>
