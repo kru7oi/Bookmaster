@@ -31,7 +31,7 @@
             </Grid.RowDefinitions>
 
             <TextBlock Text="Идентификатор читателя" />
-            <TextBox Name="SearchCustomerByIdTb" Grid.Row="2" IsReadOnly="True" />
+            <TextBox Name="SearchCustomerByIdTb" Grid.Row="2"/>
             <TextBlock Grid.Row="4" Text="Имя читателя" />
             <TextBox Name="SearchCustomerByNameTb" Grid.Row="6"/>
             <Button Name="SearchBtn" Grid.Row="8" Content="Поиск" Click="SearchBtn_Click"/>
@@ -41,7 +41,7 @@
         <!--#endregion -->
         
         <!--#region Список читателей -->
-        <ListView Grid.Column="2" Visibility="Hidden">
+        <ListView Name="CustomersLv" Grid.Column="2" Visibility="Hidden">
             <ListView.View>
                 <GridView>
                     <GridViewColumn Header="ИД" DisplayMemberBinding="{Binding Id}"/>
