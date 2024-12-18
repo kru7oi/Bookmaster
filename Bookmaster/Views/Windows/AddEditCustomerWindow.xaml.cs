@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Bookmaster.Model;
+using System.Windows;
 
 namespace Bookmaster.View.Windows
 {
@@ -8,6 +9,11 @@ namespace Bookmaster.View.Windows
     public partial class AddEditCustomerWindow : Window
     {
         public AddEditCustomerWindow()
+        {
+            InitializeComponent();
+        }
+
+        public AddEditCustomerWindow(Customer selectedCustomer)
         {
             InitializeComponent();
         }
