@@ -1,4 +1,5 @@
-﻿using System.Windows;
+﻿using Bookmaster.AppData;
+using System.Windows;
 
 namespace Bookmaster.View.Windows
 {
@@ -10,6 +11,19 @@ namespace Bookmaster.View.Windows
         public LoginWindow()
         {
             InitializeComponent();
+        }
+
+        private void AuthenticateBtn_Click(object sender, RoutedEventArgs e)
+        {
+            if (AuthenticationService.Authenticate(LoginTb.Text, PasswordPb.Password))
+            {
+                DialogResult = true;
+            }
+        }
+
+        private void CancelBtn_Click(object sender, RoutedEventArgs e)
+        {
+            Close();
         }
     }
 }
